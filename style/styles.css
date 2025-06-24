@@ -73,3 +73,63 @@ footer {
   width: 100%;
 }
 
+/* Conteneur toutes les cases élèves ensembles */
+.eleves {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Conteneur case pour chaque élève */
+.eleve {
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.eleve:hover {
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Photo de élève */
+.eleve img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Nom élève */
+.eleve h2 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0;
+  padding: 0 5px;
+}
+
+/* Responsivité tablete */
+@media (max-width: 992px) {
+  .eleves {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsivité tél */
+@media (max-width: 600px) {
+  .eleves {
+    grid-template-columns: 1fr;
+  }
+
+  .eleve img {
+    height: 190px;
+  }
+}

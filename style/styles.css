@@ -189,5 +189,14 @@ footer {
     height: 190px;
   }
 }
+.section-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-esicad {
+  width: 150px;       
+  margin-bottom: 15px;
+}
 
 

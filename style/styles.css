@@ -68,32 +68,33 @@ h1 {
       margin: 70 auto 300px;
       width: 70vw;
       max-width: 1000px;
-      height: 30vh;
+      height: 35vh;
       border: 5;
       border-radius: 1px;
     }
 
     form {
-      max-width: 600px;
-      margin: 0 auto;
+      max-width: 800px;
+      margin: 1 auto;
       background-color: #f7f7f7;
-      padding: 20px;
-      border-radius: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 50px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     label {
       display: inline-block;
-      width: 350px;
+      width: 550px;
       font-weight: bold;
-      margin-bottom: 60px;
+      margin-bottom: 10px;
     }
 
     input,
     textarea {
       width: calc(100% - 110px);
       padding: 8px;
-      margin-bottom: 11px;
+      margin-bottom: 0px;
       border: 1px solid #ccc;
       border-radius: 0px;
     }

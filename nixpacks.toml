@@ -1,5 +1,19 @@
 [phases.setup]
-nixPkgs = ["php", "apacheHttpd"]
+nixPkgs = ["php83", "php83Extensions.pdo", "php83Extensions.pdo_mysql", "caddy"]
+
+[phases.build]
+cmds = []
 
 [start]
-cmd = "apache2 -D FOREGROUND"
+cmd = "php-fpm83 -D && caddy run --config /app/Caddyfile"
+```
+
+Et crée un fichier `Caddyfile` à la racine :
+```
+:{$PORT}
+
+root * /app
+php_fastcgi 127.0.0.1:9000
+file_server
+
+encode gzip

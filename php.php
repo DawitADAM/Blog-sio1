@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$db   = 'db_portfolio';
-$user = 'root';  // mot de passe Wamp par défaut
-$pass = '';      // mot de passe Wamp par défaut
+$host    = getenv('MYSQLHOST');
+$db      = getenv('MYSQLDATABASE');
+$user    = getenv('MYSQLUSER');
+$pass    = getenv('MYSQLPASSWORD');
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
@@ -10,7 +10,6 @@ $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ];
-
 try {
     $pdo = new PDO($dsn, $user, $pass, $options);
 } catch (\PDOException $e) {

@@ -11,8 +11,10 @@ try {
       mail VARCHAR(255) UNIQUE NOT NULL,
       password_hash VARCHAR(255) NOT NULL,
       role ENUM('admin', 'prof', 'etudiant') NOT NULL DEFAULT 'etudiant',
+      must_change_password TINYINT(1) NOT NULL DEFAULT 1,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )");
+    $pdo->exec("ALTER TABLE Utilisateur ADD COLUMN IF NOT EXISTS must_change_password TINYINT(1) NOT NULL DEFAULT 1");
     echo "✅ Table Utilisateur OK<br>";
 } catch (\PDOException $e) {
     $errors[] = "Utilisateur: " . $e->getMessage();
@@ -53,6 +55,8 @@ try {
     ('LACHEVRE', 'Corran', 'corran.lachevre@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
     ('SOULIER', 'Rémi', 'remi.soulier@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
     ('LAPORTE', 'Enzo', 'enzo.laporte@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant')");
+    // Admin never needs to change password
+    $pdo->exec("UPDATE Utilisateur SET must_change_password = 0 WHERE mail = 'admin@esicad.fr'");
     echo "✅ Utilisateurs insérés OK<br>";
 } catch (\PDOException $e) {
     $errors[] = "Insert: " . $e->getMessage();

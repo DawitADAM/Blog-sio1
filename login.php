@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($mail === '' || $password === '') {
         $error = 'Veuillez remplir tous les champs.';
     } else {
-        $stmt = $pdo->prepare('SELECT id, nom, prenom, role, password_hash FROM Utilisateur WHERE mail = ?');
+        $stmt = $pdo->prepare('SELECT id, nom, prenom, role, password_hash, must_change_password FROM Utilisateur WHERE mail = ?');
         $stmt->execute([$mail]);
         $user = $stmt->fetch();
 
@@ -30,9 +30,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_prenom'] = $user['prenom'];
             $_SESSION['user_role']  = $user['role'];
 
-            if ($user['role'] === 'admin') header('Location: admin.php');
-            elseif ($user['role'] === 'prof') header('Location: notes-classe.php');
-            else header('Location: mes-notes.php');
+            if ($user['role'] === 'etudiant' && $user['must_change_password']) {
+                header('Location: change-password.php');
+            } elseif ($user['role'] === 'admin') {
+                header('Location: admin.php');
+            } elseif ($user['role'] === 'prof') {
+                header('Location: notes-classe.php');
+            } else {
+                header('Location: mes-notes.php');
+            }
             exit;
         } else {
             $error = 'Email ou mot de passe incorrect.';

@@ -98,7 +98,7 @@ $allNotes = $pdo->query(
                 </div>
                 <div>
                     <label for="matiere">Matière</label>
-                    <input type="text" id="matiere" name="matiere" required maxlength="100">
+                    <input type="text" id="matiere" name="matiere" value="U5 BTS SIO SISR" readonly style="background:#f0f0f0; cursor:default;">
                 </div>
                 <div>
                     <label for="note">Note /20</label>

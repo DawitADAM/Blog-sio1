@@ -37,16 +37,7 @@ if ($notes) {
     </style>
 </head>
 <body>
-<header>
-    <h1>Portfolio de la classe</h1>
-    <div>
-        <a href="index.html" class="headerButton">Accueil</a>
-        <a href="eleves.html" class="headerButton">Élèves</a>
-        <a href="esicad.html" class="headerButton">Conformité et Normes</a>
-        <a href="contact.html" class="headerButton">Contact</a>
-        <a href="logout.php" class="headerButton">Déconnexion</a>
-    </div>
-</header>
+<?php require 'header.php'; ?>
 <main>
     <h2>Mes notes — <?= htmlspecialchars($user['prenom'] . ' ' . $user['nom']) ?></h2>
 

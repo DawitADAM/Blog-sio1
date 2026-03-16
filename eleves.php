@@ -1,0 +1,78 @@
+<?php require 'session.php'; ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Élèves — Portfolio BTS SIO1</title>
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+</head>
+<body>
+<?php require 'header.php'; ?>
+
+<!-- Titres -->
+<h1>Voici notre classe de BTS SIO1</h1>
+
+<h2>Cliquez sur leurs noms pour retrouver les portfolios de chaque élève !</h2>
+
+<!-- Ajout des élèves de la classe -->
+
+<div class="eleves">
+        <div class="eleve">
+            <img src="assets/portraitsEleves/adamDawit.jpg" alt="ADAM Dawit">
+            <h2>ADAM Dawit</h2>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/albouyKevin.jpg" alt="ALBOUY Kevin">
+            <a href="portfolio/kevinport.pdf">ALBOUY Kevin</a>
+
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/atlanIlan.jpg" alt="ATLAN Illan">
+            <h2>ATLAN Illan</h2>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/elysee.jpg" alt="BIKIE BOUBENGA Elysee">
+            <h2>BIKIE BOUBENGA Elysee</h2>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/devauchelleElina.jpg" alt="DEVAUCHELLE Elina">
+            <h2>DEVAUCHELLE Elina</h2>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/fruchonRomain.jpg" alt="FRUCHON Romain">
+            <a href="https://portfolio-romain-fruchon.web.app/">FRUCHON Romain</a>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/gabrielleBaptiste.jpg" alt="GABRIELLE Baptiste">
+            <h2>GABRIELLE Baptiste</h2>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/grechMateo.jpg" alt="GRECH Mateo">
+            <h2>GRECH Matteo</h2>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/hustacheJordan.jpg" alt="HUSTACHE Jordan">
+            <h2>HUSTACHE Jordan</h2>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/imbertAlexandre.jpg" alt="IMBERT Alexandre">
+            <h2>IMBERT Alexandre</h2>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/lachevreCorran.jpg" alt="LACHEVRE Corran">
+            <a href="https://lecorran.github.io/portfolio/portfolio.html">LACHEVRE Corran</a>
+        </div>
+        <div class="eleve">
+            <img src="assets/portraitsEleves/soulierRemi.jpg" alt="SOULIER Remi">
+            <a href="https://remisoulier.fr/">SOULIER Rémi</a>
+        </div>
+        <div class="eleve">
+           <img src="assets/portraitsEleves/enzo.jpg" alt="LAPORTE Enzo">
+            <h2>LAPORTE Enzo</h2>
+        </div>
+    </div>
+<footer>
+    <p>© 2025 Portfolio de la classe. Tous droits réservés.</p>
+</footer>
+</body>
+</html>

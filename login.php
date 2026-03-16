@@ -58,16 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </style>
 </head>
 <body>
-<header>
-    <h1>Portfolio de la classe</h1>
-    <div>
-        <a href="index.html" class="headerButton">Accueil</a>
-        <a href="eleves.html" class="headerButton">Élèves</a>
-        <a href="esicad.html" class="headerButton">Conformité et Normes</a>
-        <a href="contact.html" class="headerButton">Contact</a>
-        <a href="login.php" class="headerButton">Connexion</a>
-    </div>
-</header>
+<?php require 'header.php'; ?>
 <main>
     <div class="login-container">
         <h2>Connexion</h2>

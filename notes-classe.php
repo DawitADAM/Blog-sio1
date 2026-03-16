@@ -32,19 +32,7 @@ $eleves = $stmt->fetchAll();
     </style>
 </head>
 <body>
-<header>
-    <h1>Portfolio de la classe</h1>
-    <div>
-        <a href="index.html" class="headerButton">Accueil</a>
-        <a href="eleves.html" class="headerButton">Élèves</a>
-        <a href="esicad.html" class="headerButton">Conformité et Normes</a>
-        <a href="contact.html" class="headerButton">Contact</a>
-        <?php if (userRole() === 'admin'): ?>
-            <a href="admin.php" class="headerButton">Admin</a>
-        <?php endif; ?>
-        <a href="logout.php" class="headerButton">Déconnexion</a>
-    </div>
-</header>
+<?php require 'header.php'; ?>
 <main>
     <h2>Notes de la classe</h2>
     <?php if (empty($eleves)): ?>

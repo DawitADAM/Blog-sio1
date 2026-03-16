@@ -1,0 +1,41 @@
+<?php require 'session.php'; ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact — Portfolio BTS SIO1</title>
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+</head>
+<body class=".page-contact">
+<?php require 'header.php'; ?>
+
+<!-- Contenu de la page de contact -->
+ <h1>Où se trouve notre école</h1>
+ <section>
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.466917576887!2d3.8262619754753984!3d43.63845305338558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b6aec016a9f96d%3A0xbf392a1dcb3a415a!2sEsicad%20Montpellier!5e0!3m2!1sen!2sfr!4v1750774618201!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+
+ </iframe>
+ </section>
+    <h1>Formulaire de contact</h1>
+    <form action="mailto:classe.bts@sio.com" method="post" enctype="text/plain">
+
+    <label for="nom">Nom :</label><br>
+    <input type="text" id="nom" name="nom" required><br><br>
+    <label for="Prenom">Prenom :</label><br>
+    <input type="text" id="Prenom" name="Prenom" required><br><br>
+
+    <label for="email">Email :</label><br>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <label for="message">Message :</label><br>
+    <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
+
+<footer>
+    <p>© 2025 Portfolio de la classe. Tous droits réservés.</p>
+</footer>
+</body>
+</html>

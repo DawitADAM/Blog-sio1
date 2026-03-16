@@ -39,7 +39,20 @@ try {
     $pdo->exec("INSERT IGNORE INTO Utilisateur (nom, prenom, mail, password_hash, role) VALUES
     ('Dupont', 'Jean', 'jean.dupont@esicad.fr', SHA2('motdepasse123', 256), 'etudiant'),
     ('Martin', 'Sophie', 'sophie.martin@esicad.fr', SHA2('motdepasse123', 256), 'prof'),
-    ('Admin', 'Root', 'admin@esicad.fr', SHA2('admin123', 256), 'admin')");
+    ('Admin', 'Root', 'admin@esicad.fr', SHA2('admin123', 256), 'admin'),
+    ('ADAM', 'Dawit', 'dawit.adam@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('ALBOUY', 'Kevin', 'kevin.albouy@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('ATLAN', 'Illan', 'illan.atlan@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('BIKIE BOUBENGA', 'Elysee', 'elysee.bikieboubenga@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('DEVAUCHELLE', 'Elina', 'elina.devauchelle@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('FRUCHON', 'Romain', 'romain.fruchon@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('GABRIELLE', 'Baptiste', 'baptiste.gabrielle@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('GRECH', 'Matteo', 'matteo.grech@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('HUSTACHE', 'Jordan', 'jordan.hustache@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('IMBERT', 'Alexandre', 'alexandre.imbert@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('LACHEVRE', 'Corran', 'corran.lachevre@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('SOULIER', 'Rémi', 'remi.soulier@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
+    ('LAPORTE', 'Enzo', 'enzo.laporte@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant')");
     echo "✅ Utilisateurs insérés OK<br>";
 } catch (\PDOException $e) {
     $errors[] = "Insert: " . $e->getMessage();

@@ -1,0 +1,80 @@
+<?php require 'session.php'; ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Conformité et Normes — Portfolio BTS SIO1</title>
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+</head>
+<body>
+<?php require 'header.php'; ?>
+
+<!-- Contenu de la page ESICAD -->
+<main>
+<section>
+    <h1 style="color: #00bfff;">Protection des données et RGPD</h1>
+
+    <h2>
+        Données collectées
+        <img src="CNIL.jpg" alt="Logo CNIL" style="height:32px; vertical-align:middle; margin-left:10px;">
+    </h2>
+    <ul>
+        <li>Prénom et nom des élèves : pour identifier clairement chaque élève de la classe. </li>
+        <li>Photo de chaque élève : permet de visualiser les membres de la classe, dans un esprit de convivialité et d'identification. </li>
+        <li>Lien vers un portfolio personnel :  permet d'accéder directement aux travaux et compétences de chaque élève, dans un but de valorisation et de présentation professionnelle</li>
+    </ul>
+
+    <h2>
+        Consentement
+        <img src="RGPD.png" alt="Logo RGPD" style="height:32px; vertical-align:middle; margin-left:10px;">
+    </h2>
+    <strong>Toutes les données publiées ont fait l'objet d'un consentement explicite et écrit des élèves. Ce consentement garantit que chacun est informé de l'utilisation de ses données personnelles conformément au Règlement Général sur la Protection des Données (RGPD)..</strong>
+
+    <h2>Finalité</h2>
+    <p>Ce site a pour but pédagogique et promotionnel de :
+
+Présenter la classe de BTS SIO1 de l'ESICAD.
+
+Mettre en valeur les compétences acquises par les élèves.
+
+Montrer l'implication dans des projets concrets liés à l'informatique.
+
+Favoriser une première visibilité en ligne dans une logique de préprofessionnalisation.</p>
+
+    <h2>Droit des personnes</h2>
+    <p>Conformément au RGPD, toute personne peut demander la modification ou la suppression de ses données en envoyant un message à : <div>kevin.albouy@esicad.org</div>
+
+</section>
+
+<section>
+    <h1 style="color: #00bfff;">Référentiels IT et qualité</h1>
+
+    <h2>ITIL</h2>
+    <ul>
+        <li>Gestion des incidents : Mise en place d'une procédure pour identifier, enregistrer et corriger rapidement les erreurs ou dysfonctionnements du site (bugs, problèmes d'affichage, erreurs de lien…).</li>
+        <li>Gestion des changements : Avant toute modification importante du contenu ou de la structure du site, une validation collective est exigée (relecture par les membres de l'équipe, tests, sauvegarde).
+
+</li>
+    </ul>
+
+    <h2>COBIT</h2>
+    <ul>
+        <li>Les rôles sont définis (par exemple : Scrum Master, développeur, responsable contenu…) pour assurer une organisation efficace et éviter les redondances.</li>
+        <li>Le site vise à promouvoir la classe, valoriser les élèves et fournir un support utile pour les entreprises ou intervenants intéressés par le BTS SIO.</li>
+        <li>L'équipe utilise des outils collaboratifs tels que Trello (gestion des tâches) et GitHub (gestion de version, suivi des modifications de code) pour garder une trace des évolutions du site et travailler en équipe efficacement.</li>
+    </ul>
+
+    <h2>Charte graphique</h2>
+    <ul>
+        <li>Le site respecte une charte graphique cohérente : couleurs, polices, mise en page…</li>
+        <li>Les éléments graphiques sont utilisés de manière harmonieuse pour assurer une navigation fluide et agréable.</li>
+        <li>Le bleu #00bfff, couleur dynamique et moderne, a été choisi en référence à l'identité visuelle de notre école. Il symbolise la technologie, la confiance et la clarté, des valeurs que nous souhaitons refléter à travers notre projet.</li>
+    </ul>
+</section>
+</main>
+
+<footer>
+    <p>© 2025 Portfolio de la classe. Tous droits réservés.</p>
+</footer>
+</body>
+</html>

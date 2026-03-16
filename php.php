@@ -25,8 +25,12 @@ try {
       mail VARCHAR(255) UNIQUE NOT NULL,
       password_hash VARCHAR(255) NOT NULL,
       role ENUM('admin', 'prof', 'etudiant') NOT NULL DEFAULT 'etudiant',
+      must_change_password TINYINT(1) NOT NULL DEFAULT 1,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )");
+
+    // Add column to existing tables that may not have it yet
+    $pdo->exec("ALTER TABLE Utilisateur ADD COLUMN IF NOT EXISTS must_change_password TINYINT(1) NOT NULL DEFAULT 1");
 
     $pdo->exec("CREATE TABLE IF NOT EXISTS Notes (
       id INT PRIMARY KEY AUTO_INCREMENT,
@@ -55,6 +59,8 @@ try {
     ('LACHEVRE', 'Corran', 'corran.lachevre@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
     ('SOULIER', 'Rémi', 'remi.soulier@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant'),
     ('LAPORTE', 'Enzo', 'enzo.laporte@my-digital-school.org', SHA2('motdepasse123', 256), 'etudiant')");
+    // Admin never needs to change password
+    $pdo->exec("UPDATE Utilisateur SET must_change_password = 0 WHERE mail = 'admin@esicad.fr'");
 } catch (\PDOException $e) {
     // Tables may already exist or init failed — continue
 }

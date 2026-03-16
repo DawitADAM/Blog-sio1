@@ -15,4 +15,34 @@ try {
 } catch (\PDOException $e) {
     die("Erreur DB : " . $e->getMessage());
 }
+
+// Init schema if tables don't exist
+try {
+    $pdo->exec("CREATE TABLE IF NOT EXISTS Utilisateur (
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      nom VARCHAR(100) NOT NULL,
+      prenom VARCHAR(100) NOT NULL,
+      mail VARCHAR(255) UNIQUE NOT NULL,
+      password_hash VARCHAR(255) NOT NULL,
+      role ENUM('admin', 'prof', 'etudiant') NOT NULL DEFAULT 'etudiant',
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )");
+
+    $pdo->exec("CREATE TABLE IF NOT EXISTS Notes (
+      id INT PRIMARY KEY AUTO_INCREMENT,
+      etudiant_id INT NOT NULL,
+      matiere VARCHAR(100) NOT NULL,
+      note DECIMAL(4,2) NOT NULL,
+      appreciation TEXT,
+      date_saisie DATE NULL DEFAULT NULL,
+      FOREIGN KEY (etudiant_id) REFERENCES Utilisateur(id) ON DELETE CASCADE
+    )");
+
+    $pdo->exec("INSERT IGNORE INTO Utilisateur (nom, prenom, mail, password_hash, role) VALUES
+    ('Dupont', 'Jean', 'jean.dupont@esicad.fr', SHA2('motdepasse123', 256), 'etudiant'),
+    ('Martin', 'Sophie', 'sophie.martin@esicad.fr', SHA2('motdepasse123', 256), 'prof'),
+    ('Admin', 'Root', 'admin@esicad.fr', SHA2('admin123', 256), 'admin')");
+} catch (\PDOException $e) {
+    // Tables may already exist or init failed — continue
+}
 ?>

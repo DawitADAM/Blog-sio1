@@ -5,6 +5,14 @@ require 'php.php';
 
 $userId = userId();
 
+// Redirect to password change if not yet done
+$stmtChk = $pdo->prepare('SELECT must_change_password FROM Utilisateur WHERE id = ?');
+$stmtChk->execute([$userId]);
+if ((int)$stmtChk->fetchColumn() === 1) {
+    header('Location: change-password.php');
+    exit;
+}
+
 $stmt = $pdo->prepare('SELECT nom, prenom FROM Utilisateur WHERE id = ?');
 $stmt->execute([$userId]);
 $user = $stmt->fetch();

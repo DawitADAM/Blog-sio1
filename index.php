@@ -1,0 +1,66 @@
+<?php require 'session.php'; ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio de la classe</title>
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
+</head>
+<body>
+<?php require 'header.php'; ?>
+
+<!-- Contenu de la page accueil -->
+<main>
+      <div class="section-logo">
+        <img src="assets/logo.png" alt="Logo ESICAD" class="logo-esicad">
+        <h1>Bienvenue sur le Portfolio de la classe</h1>
+    </div>
+
+    <h2>Présentation de l'école</h2>
+
+    <p>L'ESICAD Montpellier est une école supérieure privée fondée en 1983, spécialisée dans les formations post-bac en commerce, gestion, management, informatique, tourisme, hôtellerie et plus encore. Elle propose des cursus allant du BTS au Bac+5, en initial ou en alternance, avec un fort ancrage local grâce à plus de 750 partenariats avec des entreprises régionales. L'établissement est situé dans le quartier Euromédecine, accessible via le tramway ligne 1, arrêt Malbosc</p>
+
+    <h2>Le BTS</h2>
+
+    <p>
+        Ce site a aussi été conçu dans le but de présenter la formation BTS SIO ainsi que les élèves qui la composent.
+        Il met en lumière les compétences acquises au cours de ces deux années, les projets réalisés en formation,
+        ainsi que les portfolios professionnels de chaque étudiant.
+    </p>
+
+    <p>
+        Le BTS Services Informatiques aux Organisations (SIO) est une formation en deux ans accessible après le baccalauréat.
+        Elle prépare les étudiants aux métiers de l'informatique à travers deux spécialités :
+    </p>
+
+    <ul>
+        <li><strong>SLAM</strong> : orientée vers le développement d'applications, la gestion de bases de données, et la programmation web ou mobile.</li>
+        <li><strong>SISR</strong> : axée sur la gestion des réseaux, la cybersécurité, l'administration systèmes et les infrastructures informatiques.</li>
+    </ul>
+
+    <p>
+        Ce site est à la fois une vitrine de la diversité des profils de notre promotion et un espace permettant aux professionnels
+        de découvrir nos compétences, nos parcours et nos réalisations. Chaque étudiant dispose d'une fiche personnalisée avec un lien vers son portfolio professionnel.
+    </p>
+
+    <h2>Que trouverez-vous ici ?</h2>
+    <ul>
+        <li>Une présentation de notre école et du BTS SIO</li>
+        <li>Une page dédiée à notre classe</li>
+        <li>Un accès aux portfolios de tous les étudiants</li>
+        <li>Des exemples de projets menés en cours de formation</li>
+    </ul>
+
+    <p>
+        Nous espérons que ce site vous permettra de mieux comprendre notre formation, de découvrir les talents que nous représentons,
+        et peut-être d'entrer en contact avec nous pour un stage, une alternance ou une opportunité d'emploi.
+    </p>
+
+    <p><strong>Bonne visite.</strong></p>
+</main>
+
+<footer>
+    <p>© 2025 Portfolio de la classe. Tous droits réservés.</p>
+</footer>
+</body>
+</html>

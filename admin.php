@@ -74,15 +74,7 @@ $allNotes = $pdo->query(
     </style>
 </head>
 <body>
-<header>
-    <h1>Portfolio de la classe</h1>
-    <div>
-        <a href="index.html" class="headerButton">Accueil</a>
-        <a href="eleves.html" class="headerButton">Élèves</a>
-        <a href="notes-classe.php" class="headerButton">Notes classe</a>
-        <a href="logout.php" class="headerButton">Déconnexion</a>
-    </div>
-</header>
+<?php require 'header.php'; ?>
 <main>
     <h1>Administration</h1>
 

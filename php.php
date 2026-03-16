@@ -17,8 +17,7 @@ try {
 }
 
 // Init schema if tables don't exist
-$pdo->exec("
-CREATE TABLE IF NOT EXISTS Utilisateur (
+$pdo->exec("CREATE TABLE IF NOT EXISTS Utilisateur (
   id INT PRIMARY KEY AUTO_INCREMENT,
   nom VARCHAR(100) NOT NULL,
   prenom VARCHAR(100) NOT NULL,
@@ -26,9 +25,9 @@ CREATE TABLE IF NOT EXISTS Utilisateur (
   password_hash VARCHAR(255) NOT NULL,
   role ENUM('admin', 'prof', 'etudiant') NOT NULL DEFAULT 'etudiant',
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+)");
 
-CREATE TABLE IF NOT EXISTS Notes (
+$pdo->exec("CREATE TABLE IF NOT EXISTS Notes (
   id INT PRIMARY KEY AUTO_INCREMENT,
   etudiant_id INT NOT NULL,
   matiere VARCHAR(100) NOT NULL,
@@ -36,11 +35,10 @@ CREATE TABLE IF NOT EXISTS Notes (
   appreciation TEXT,
   date_saisie DATE DEFAULT (CURRENT_DATE),
   FOREIGN KEY (etudiant_id) REFERENCES Utilisateur(id) ON DELETE CASCADE
-);
+)");
 
-INSERT IGNORE INTO Utilisateur (nom, prenom, mail, password_hash, role) VALUES
+$pdo->exec("INSERT IGNORE INTO Utilisateur (nom, prenom, mail, password_hash, role) VALUES
 ('Dupont', 'Jean', 'jean.dupont@esicad.fr', SHA2('motdepasse123', 256), 'etudiant'),
 ('Martin', 'Sophie', 'sophie.martin@esicad.fr', SHA2('motdepasse123', 256), 'prof'),
-('Admin', 'Root', 'admin@esicad.fr', SHA2('admin123', 256), 'admin');
-");
+('Admin', 'Root', 'admin@esicad.fr', SHA2('admin123', 256), 'admin')");
 ?>
